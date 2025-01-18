@@ -1,0 +1,11 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    uses: BijanProgrammerWebsites/hub/.github/workflows/deploy-docusaurus.yml@master
+    with:
+      host: docs.codective.ir
+      base-href: /
