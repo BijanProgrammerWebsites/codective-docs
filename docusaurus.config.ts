@@ -1,0 +1,119 @@
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+const config: Config = {
+  title: "Codective Docs",
+  tagline: "مستندات Codective شامل آموزش‌ها، دوره‌ها و بوت‌کمپ‌ها.",
+  favicon: "meta/favicon.ico",
+
+  // Set the production url of your site here
+  url: "https://docs.codective.ir",
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: "/",
+
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: "fa",
+    locales: ["fa"],
+  },
+
+  presets: [
+    [
+      "classic",
+      {
+        docs: {
+          sidebarPath: "./sidebars.ts",
+        },
+        theme: {
+          customCss: "./src/css/custom.css",
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  themeConfig: {
+    image: "meta/social-card.jpg",
+    navbar: {
+      title: "Codective Docs",
+      logo: {
+        alt: "لوگوی Codective",
+        src: "logo/logo.svg",
+        srcDark: "logo/logo-dark.svg",
+      },
+      items: [
+        {
+          type: "docSidebar",
+          sidebarId: "docsSidebar",
+          position: "left",
+          label: "مستندات",
+        },
+        {
+          href: "https://github.com/BijanProgrammerWebsites/codective-docs",
+          label: "GitHub",
+          position: "right",
+        },
+      ],
+    },
+    footer: {
+      style: "light",
+      links: [
+        {
+          title: "مستندات",
+          items: [
+            {
+              label: "React",
+              to: "/docs/react",
+            },
+          ],
+        },
+        {
+          title: "شبکه‌های اجتماعی",
+          items: [
+            {
+              label: "تلگرام",
+              href: "https://t.me/Codective",
+            },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/in/bijanprogrammer",
+            },
+            {
+              label: "YouTube",
+              href: "https://www.youtube.com/@BijanProgrammer?sub_confirmation=1",
+            },
+            {
+              label: "آپارات",
+              href: "https://www.aparat.com/BijanProgrammer",
+            },
+          ],
+        },
+        {
+          title: "متفرقه",
+          items: [
+            {
+              label: "سایت اصلی",
+              href: "https://codective.ir",
+            },
+          ],
+        },
+      ],
+      copyright:
+        "تمامی حقوق مادی و معنوی این وب‌سایت متعلق به بیژن عیسی‌پور می‌باشد.",
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  } satisfies Preset.ThemeConfig,
+};
+
+export default config;

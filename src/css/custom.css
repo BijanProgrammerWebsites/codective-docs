@@ -1,0 +1,72 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: hsl(210deg 80% 35%);
+  --ifm-color-primary-dark: hsl(210deg 80% 32%);
+  --ifm-color-primary-darker: hsl(210deg 80% 30%);
+  --ifm-color-primary-darkest: hsl(210deg 80% 25%);
+  --ifm-color-primary-light: hsl(210deg 80% 39%);
+  --ifm-color-primary-lighter: hsl(210deg 80% 40%);
+  --ifm-color-primary-lightest: hsl(210deg 80% 45%);
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: hsl(0deg 0% 0% / 0.1);
+
+  --ifm-font-family-base: Vazirmatn, sans-serif;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: hsl(210deg 90% 55%);
+  --ifm-color-primary-dark: hsl(210deg 90% 54%);
+  --ifm-color-primary-darker: hsl(210deg 90% 50%);
+  --ifm-color-primary-darkest: hsl(210deg 90% 46%);
+  --ifm-color-primary-light: hsl(210deg 90% 60%);
+  --ifm-color-primary-lighter: hsl(210deg 90% 62%);
+  --ifm-color-primary-lightest: hsl(210deg 90% 69%);
+  --docusaurus-highlighted-code-line-bg: hsl(0deg 0% 0% / 0.3);
+}
+
+#__docusaurus {
+  min-height: 100vh !important;
+}
+
+.navbar__item.navbar__link {
+  display: flex;
+  align-items: baseline;
+
+  line-height: 1;
+}
+
+.theme-code-block {
+  direction: rtl;
+}
+
+.theme-code-block pre code {
+  max-height: 40rem;
+}
+
+.theme-code-block pre code .token-line {
+  float: inherit;
+  clear: both;
+}
+
+.theme-code-block pre + div {
+  right: unset;
+  left: calc(var(--ifm-pre-padding) / 2);
+}
+
+.theme-doc-markdown.markdown img {
+  display: block;
+  margin: auto;
+}
+
+.markdown p:has(+ ul, + ol, + dl) {
+  margin-block-end: 0;
+}
