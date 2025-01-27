@@ -106,12 +106,33 @@ const config: Config = {
           ],
         },
       ],
-      copyright:
-        "تمامی حقوق مادی و معنوی این وب‌سایت متعلق به بیژن عیسی‌پور می‌باشد.",
+      copyright: "تمامی حقوق مادی و معنوی این وب‌سایت متعلق به بیژن عیسی‌پور می‌باشد.",
+    },
+    tableOfContents: {
+      maxHeadingLevel: 5,
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.vsDark,
+      magicComments: [
+        {
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line",
+          block: { start: "highlight-start", end: "highlight-end" },
+        },
+        {
+          className: "custom-code-block-warning-line",
+          line: "warning-next-line",
+        },
+        {
+          className: "custom-code-block-error-line",
+          line: "error-next-line",
+        },
+        {
+          className: "custom-code-block-strike-line",
+          line: "strike-next-line",
+        },
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };

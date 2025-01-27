@@ -15,10 +15,11 @@
   --ifm-color-primary-light: hsl(210deg 80% 39%);
   --ifm-color-primary-lighter: hsl(210deg 80% 40%);
   --ifm-color-primary-lightest: hsl(210deg 80% 45%);
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: hsl(0deg 0% 0% / 0.1);
+  --docusaurus-highlighted-code-line-bg: hsl(210deg 100% 50% / 0.2);
 
   --ifm-font-family-base: Vazirmatn, sans-serif;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-code-font-size: 95%;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -30,7 +31,7 @@
   --ifm-color-primary-light: hsl(210deg 90% 60%);
   --ifm-color-primary-lighter: hsl(210deg 90% 62%);
   --ifm-color-primary-lightest: hsl(210deg 90% 69%);
-  --docusaurus-highlighted-code-line-bg: hsl(0deg 0% 0% / 0.3);
+  --docusaurus-highlighted-code-line-bg: hsl(210deg 100% 50% / 0.2);
 }
 
 #__docusaurus {
@@ -67,6 +68,40 @@
   margin: auto;
 }
 
-.markdown p:has(+ ul, + ol, + dl) {
-  margin-block-end: 0;
+h3 {
+  padding-block-end: 0.5rem;
+
+  border-block-end: 1px solid currentColor;
+}
+
+.theme-code-block-highlighted-line {
+  inline-size: 100%;
+
+  border-inline-start: 3px solid hsl(210deg 100% 50% / 0.5);
+}
+
+.custom-code-block-warning-line,
+.custom-code-block-error-line {
+  display: block;
+
+  inline-size: 100%;
+
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.custom-code-block-warning-line {
+  background-color: hsl(30deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(30deg 100% 50% / 0.5);
+}
+
+.custom-code-block-error-line {
+  background-color: hsl(0deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(0deg 100% 50% / 0.5);
+}
+
+.custom-code-block-strike-line {
+  text-decoration: line-through;
 }
