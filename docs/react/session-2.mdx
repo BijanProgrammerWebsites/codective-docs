@@ -713,29 +713,174 @@ const friends2: Array<string> = ["Geller", "Green", "Bing", "Geller", "Tribbiani
 به روش دوم می‌گیم Generic.
 از Generic زمانی استفاده می‌کنیم که تایپمون در زمان استفاده تعیین میشه.
 
-برای اینکه کاربردش جا بیفته، ساختمان داده‌ی Stack رو با استفاده از TypeScript پیاده‌سازی می‌کنیم.
+برای اینکه کاربردش جا بیفته، ساختمان داده‌ی Queue رو با استفاده از TypeScript پیاده‌سازی می‌کنیم.
 
-پشته یا Stack یه ساختمان داده‌ست که دو تا متد اصلی به نام‌های `push` و `pop` داره.
-اگه از push استفاده کنیم، آیتم مورد نظر رو می‌تونه به انتهای پشته اضافه کنیم.
-اگه از `pop` استفاده کردیم، از انتهای پشته یه آیتم برمی‌داریم.
+صف یا Queue یه ساختمان داده‌ست که دو تا متد اصلی به نام‌های `enqueue` و `dequeue` داره.
+اگه از `enqueue` استفاده کنیم، می‌تونیم آیتم مورد نظر رو به انتهای صف اضافه کنیم.
+اگه از `dequeue` استفاده کردیم، از ابتدای صف یه آیتم برمی‌داریم.
 
-مثالش تو دنیای واقعی شبیه به پشته‌ای کتاب‌هاست که روی هم قرار داده شده.
-اگه بخوایم کتاب جدیدی اضافه کنیم باید بذاریم روی بقیه‌ی کتاب‌ها.
-اگه بخوایم کتابی برداریم، باید از رو برداریم؛ نمی‌تونیم از وسط یا زیر برداریم.
+مثالش تو دنیای واقعی شبیه به صف نونواییه.
+اگه فرد جدید بیاد، باید انتهای صف بره.
+اگه کسی بخواد نون بگیره، باید فردی باشه که ابتدای صف هست.
+
+پس در مجموع میشه گفت هر کی زودتر بیاد، زودتر هم میره؛
+که تو برنامه‌نویسی بهش میگن FIFO که مخفف First-in-first-out ئه.
+
+از دموی تعاملی زیر می‌تونید استفاده کنید تا بهتر براتون جا بیفته:
 
 <QueueComponent />
 
-1. Array
-2. Stack
+پیاده‌سازیش تو TypeScript اینجوریه:
+
+```typescript
+class Queue {
+  private items: number[];
+
+  public enqueue(item: number): void {
+    this.items.push(item);
+  }
+
+  public dequeue(): number | undefined {
+    if (this.items.length === 0) {
+      return undefined;
+    }
+
+    return this.items.splice(0, 1)[0];
+  }
+}
+```
+
+:::tip
+
+می‌تونیم با استفاده از `private` و `public` مشخص کنیم چه کسی به فیلدهای مورد نظرمون می‌تونه دسترسی داشته باشه.
+
+اگه `private` باشه، یعنی فقط متدهای داخل کلاس می‌تونن از اون فیلد استفاده کنن.
+
+اگه `public` باشه، یعنی از خارج از کلاس هم میشه بهش دسترسی داشت.
+
+:::
+
+این پیاده‌سازی درسته و نیاز ما رو جواب میده.
+اما مشکلی که داره اینه که فقط از اعداد پشتیبانی میکنه.
+فرض کنید بخوایم یه صف برای انسان‌ها داشته باشیم.
+اون موقع دیگه نباید از number استفاده کنیم؛
+بلکه باید از یه تایپی مثل Person استفاده کنیم.
+
+برای اینکه بتونیم یه کاری کنیم که کلاسمون با هر تایپی بتونه کار کنه، باید از Generic استفاده کنیم:
+
+```typescript
+class Queue<T> {
+  private items: T[];
+
+  public enqueue(item: T): void {
+    this.items.push(item);
+  }
+
+  public dequeue(): T | undefined {
+    if (this.items.length === 0) {
+      return undefined;
+    }
+
+    return this.items.splice(0, 1)[0];
+  }
+}
+```
+
+استفاده کردن ازش هم به این شکله:
+
+```typescript
+type Person = {
+  firstName: string;
+  lastName: string;
+};
+
+// highlight-next-line
+const queue = new Queue<Person>();
+
+queue.enqueue({ firstName: "Bijan", lastName: "Eisapour" });
+```
 
 ### Utility Types
 
-1. Pick
-2. Omit
-3. ReturnType
-4. Reference the doc
-   https://www.typescriptlang.org/docs/handbook/utility-types.html
+تو TypeScript می‌تونیم از یه سری تایپ آماده استفاده کنیم تا تایپ‌های جدید بسازیم.
+به این نوع از تایپ‌ها Utility Types میگن.
+
+اینجا چند تا رو به عنوان نمونه معرفی می‌کنیم اما تعدادشون خیلی بیشتر از این حرفاست.
+می‌تونید از
+[سایت TypeScript](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+لیست و نحوه‌ی استفاده از هر کدوم رو مشاهده کنید.
+
+:::info
+
+با ترکیب‌کردن Generic و Utility Types میشه تایپ‌های خیلی پیشرفته درست کرد.
+اما برای این بوت‌کمپ نیازی نیست خیلی توش عمیق شیم.
+
+:::
+
+#### Pick
+
+از این تایپ زمانی استفاده می‌کنیم که
+بخوایم یک یا چند فیلد مختلف از یه تایپ دیگه رو گلچین کنیم و باهاشون یه تایپ جدید بسازیم.
+
+```typescript
+type User = {
+  name: string;
+  address: string;
+  username: string;
+  password: string;
+};
+
+type Person = Pick<User, "name" | "address">;
+```
+
+:::tip
+
+برای استفاده از Utility Types نیاز نیست `import`شون کنید؛
+چون جزئی از خودِ TypeScript هستن.
+
+:::
+
+#### Omit
+
+از این تایپ زمانی استفاده می‌کنیم که
+بخوایم یک یا چند فیلد رو از یه تایپ دیگه حذف کنیم و با باقی فیلدها یه تایپ جدید بسازیم.
+
+```typescript
+type User = {
+  name: string;
+  address: string;
+  username: string;
+  password: string;
+};
+
+type Person = Omit<User, "username" | "password">;
+```
+
+#### ReturnType
+
+از این تایپ زمانی استفاده می‌کنیم که
+بخوایم تایپ خروجی یه تابع رو به دست بیاریم.
+
+```typescript
+function create(user: User): { status: number; message: string } {
+  // ...
+}
+
+type Response = ReturnType<typeof create>;
+```
+
+:::tip
+
+اینجا نمی‌تونیم مستقیم از `create` استفاده کنیم، چون `create` تایپ نیست.
+بنابراین باید اول `typeof`ش رو به دست بیاریم بعد به `ReturnType` پاسش بدیم.
+
+:::
 
 ### Further Reading
 
-1. https://www.typescriptlang.org/docs/handbook/intro.html
+فیچپرهای TypeScript خیلی خیلی بیشتر از چیزیه که اینجا بهش اشاره کردیم؛
+اما همین چیزایی که گفتیم برای این بوت‌کمپ کافیه.
+
+اگه خودتون علاقه دارید، پیشنهاد می‌کنم از
+[Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+برای یادگیری TypeScript استفاده کنید.
