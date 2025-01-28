@@ -1,0 +1,31 @@
+.queue {
+  .items {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    padding-block: 1rem;
+
+    border-block: 1px solid var(--ifm-color-primary);
+
+    .empty,
+    .item {
+      margin: 0;
+      padding: 1rem 2rem;
+    }
+
+    .item {
+      background-color: var(--ifm-color-primary);
+
+      border-radius: 0.25rem;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}

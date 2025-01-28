@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+import QueueComponent from "@site/src/components/queue/queue.component.tsx";
+
 # جلسه 2
 
 ## TypeScript
@@ -405,7 +407,7 @@ const button = document.querySelector("button") as number;
 
 :::danger
 
-تقریباً هیچوقت نباید از as استفاده کنید.
+تقریباً هیچوقت نباید از `as` استفاده کنید.
 مگر در موارد خیلی نادر و کاملاً محتاطانه که چاره‌ای جز این کار نداشته باشیم.
 
 :::
@@ -538,7 +540,7 @@ function perform({ action, value, multiplier }: Params): number {
 ```
 
 همونطور که دیدید، TypeScript کاملاً هوشمندانه متوجه شد که وقتی وارد شرط می‌شیم،
-دیگه امکان نداره multiplier برابر با undefined باشه،
+دیگه امکان نداره `multiplier` برابر با `undefined` باشه،
 بنابراین دیگه به ما خطا نشون نداد.
 
 به این ویژگیِ TypeScript میگن Narrowing.
@@ -547,7 +549,7 @@ function perform({ action, value, multiplier }: Params): number {
 
 ما می‌تونیم پا رو فراتر بذاریم و به TypeScript بگیم تایپ فیلدهامون رو بر اساس مقدار یه فیلد خاص در نظر بگیره.
 
-به عنوان نمونه تو مثال قبل، فیلدِ action تعیین کننده بود که آیا multiplier داریم یا نه.
+به عنوان نمونه تو مثال قبل، فیلدِ `action` تعیین کننده بود که آیا `multiplier` داریم یا نه.
 
 می‌تونیم به این شکل کد رو پیاده‌سازی کنیم:
 
@@ -582,7 +584,7 @@ function perform(params: Params): number {
 }
 ```
 
-معنی این کد اینه که Params در مجموع دو حالت داره.
+معنی این کد اینه که Params در مجموع دو حالت داره:
 
 1. حالت اول زمانیه که `action` برابر با `increment` یا `decrement` باشه.
    در این صورت یه فیلدِ دیگه به اسم `value` هم باید پاس داده بشه.
@@ -595,12 +597,133 @@ function perform(params: Params): number {
 
 ### TypeScript-specific Types
 
-1. any (allow anything)
-2. unknown (ensure someone using this type declares what the type is)
-3. never (it's not possible that this type could happen)
-4. void (a function which returns undefined or has no return value)
+یه سری تایپ‌ها هستن که مخصوصِ TypeScriptـن و تو JavaScript وجود نداشتن.
+
+#### any
+
+هموطنور که از اسمش مشخصه، از این تایپ زمانی استفاده می‌کنیم که بخوایم بگیم متغیرمون می‌تون هر چیزی باشه.
+این تایپ یه جورایی ما رو برمیگردونه به JavaScript. به این معنا که دیگه Type Safety نخواهیم داشت.
+به خاطر همین، تا جای ممکن نباید ازش استفاده کرد.
+
+به عنوان مثال هیچکدوم از کدهای زیر زمان Compile به ما خطا نمیدن.
+اما واضحه که اشتباه هستن.
+
+```typescript
+let obj: any = { x: 0 };
+
+obj.foo();
+obj();
+obj.bar = 100;
+obj = "hello";
+
+const n: number = obj;
+```
+
+:::danger
+
+تقریباً هیچوقت نباید از `any` استفاده کنید.
+دانشجوها معمولاً به خاطر نقص دانش سراغ `any` میرن.
+به این معنی که یه راه بهتری برای حل مشکلشون وجود داشته اما بلد نبودن.
+
+:::
+
+#### unknown
+
+از این تایپ زمانی استفاده می‌کنیم که نمی‌دونیم تایپ متغیرمون چیه.
+از خیلی جهات شبیه به `any` ئه اما خوبیش اینه که استفاده ازش بی‌خطره؛
+چون اجازه ندارید هیچ کاری با اون متغیر انجام بدید.
+
+تو مثال زیر، چون نمی‌دونیم تایپ `x` چیه، بنابراین نمی‌تونیم تابع مورد نظر رو از روش صدا بزنیم:
+
+```typescript
+function doSomething(x: unknown) {
+  // error-next-line
+  x.doAnotherThing(); // TS2339: Property doAnotherThing does not exist on type unknown
+}
+```
+
+تو مثال بعد، چون قبلش تایپ رو چک کردیم، مطمئنیم عدده،
+بنابراین از ویژگی Narrowing استفاده می‌کنیم و می‌تونیم عملیات‌های ریاضی رو انجام بدیم:
+
+```typescript
+function increment(x: unknown) {
+  if (typeof x === "number") {
+    return x + 1;
+  }
+
+  return x;
+}
+```
+
+#### never
+
+این تایپ زمانی استفاده میشه که امکان نداشته باشه چنین چیزی وجود داشته باشه.
+
+مثال زیر رو در نظر داشته باشید:
+
+```typescript
+function fn(x: string | number) {
+  if (typeof x === "string") {
+    // do something
+  } else if (typeof x === "number") {
+    // do something else
+  } else {
+    x; // has type 'never'!
+  }
+}
+```
+
+اینجا `x` می‌تونه `string` یا `number` باشه.
+تو دو تا شرط اول ما این دو تایپ رو بررسی کردیم.
+پس اصن امکان نداره به شرط آخر برسیم.
+بنابراین تایپ `x` اونجا برابر با `never` میشه.
+
+#### void
+
+از این تایپ به عنوان خروجی توابع استفاده می‌کنیم.
+زمانی که تابع هیچ `return`ـی نداشته باشه، یا اگه داره، مقدار خاصی برنمی‌گردونه، از `void` استفاده می‌کنیم.
+
+```typescript
+function chiz(): void {
+  console.log("Doesn't return anything!");
+}
+
+function yaroo(): void {
+  console.log("Doesn't return anything in another way!");
+  return;
+}
+```
+
+:::note
+
+این تایپ تو JavaScript هم بود اما کاربردش با چیزی که تو TypeScript داریم متفاوته.
+
+:::
 
 ### Generic
+
+قبلاً گفتیم میشه آرایه رو به دو روش تعریف کرد:
+
+```typescript
+const freinds: string[] = ["Ross", "Rachel", "Chandler", "Monica", "Joey", "Phoebe"];
+
+const friends2: Array<string> = ["Geller", "Green", "Bing", "Geller", "Tribbiani", "Buffay"];
+```
+
+به روش دوم می‌گیم Generic.
+از Generic زمانی استفاده می‌کنیم که تایپمون در زمان استفاده تعیین میشه.
+
+برای اینکه کاربردش جا بیفته، ساختمان داده‌ی Stack رو با استفاده از TypeScript پیاده‌سازی می‌کنیم.
+
+پشته یا Stack یه ساختمان داده‌ست که دو تا متد اصلی به نام‌های `push` و `pop` داره.
+اگه از push استفاده کنیم، آیتم مورد نظر رو می‌تونه به انتهای پشته اضافه کنیم.
+اگه از `pop` استفاده کردیم، از انتهای پشته یه آیتم برمی‌داریم.
+
+مثالش تو دنیای واقعی شبیه به پشته‌ای کتاب‌هاست که روی هم قرار داده شده.
+اگه بخوایم کتاب جدیدی اضافه کنیم باید بذاریم روی بقیه‌ی کتاب‌ها.
+اگه بخوایم کتابی برداریم، باید از رو برداریم؛ نمی‌تونیم از وسط یا زیر برداریم.
+
+<QueueComponent />
 
 1. Array
 2. Stack
