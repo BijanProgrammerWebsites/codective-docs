@@ -1,5 +1,10 @@
 import { ReactElement, useCallback, useState } from "react";
 
+import { Flipped, Flipper } from "react-flip-toolkit";
+
+import { slideAppearAnimation } from "@site/src/animations/slide-appear.animation";
+import { slideExitAnimation } from "@site/src/animations/slide-exit.animation";
+
 import styles from "./queue.module.css";
 
 const MAX_COUNT = 5;
@@ -26,23 +31,27 @@ export default function QueueComponent(): ReactElement {
   }, [items.length]);
 
   return (
-    <div className={styles.queue}>
-      <ol className={styles.items}>
-        {items.length === 0 && (
-          <li className={styles.empty}>صف خالی است. از دکمه‌ی enqueue برای اضافه‌کردن آیتم جدید استفاده کنید.</li>
-        )}
-        {items.map((item) => (
-          <li className={styles.item}>{item}</li>
-        ))}
-      </ol>
-      <div className={styles.actions}>
-        <button className="button button--secondary" onClick={enqueue}>
-          enqueue
-        </button>
-        <button className="button button--secondary" onClick={dequeue}>
-          dequeue
-        </button>
+    <Flipper flipKey={items.join("")}>
+      <div className={styles.queue}>
+        <ol className={styles.items}>
+          {items.length === 0 && (
+            <li className={styles.empty}>صف خالی است. از دکمه‌ی enqueue برای اضافه‌کردن آیتم جدید استفاده کنید.</li>
+          )}
+          {items.map((item) => (
+            <Flipped key={item} flipId={item} onAppear={slideAppearAnimation} onExit={slideExitAnimation}>
+              <li className={styles.item}>{item}</li>
+            </Flipped>
+          ))}
+        </ol>
+        <div className={styles.actions}>
+          <button className="button button--secondary" onClick={enqueue}>
+            enqueue
+          </button>
+          <button className="button button--secondary" onClick={dequeue}>
+            dequeue
+          </button>
+        </div>
       </div>
-    </div>
+    </Flipper>
   );
 }
