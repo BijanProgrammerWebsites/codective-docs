@@ -13,13 +13,13 @@ description: ""
 به این معنی که شما نمی‌تونید مستقیماً از اسم Componentهاتون تو CSS استفاده کنید.
 به جاش باید بهشون Class بدید و از Class Selector استفاده کنید.
 
-```css title="❌ Wrong Code - HTML"
+```css title="❌ Wrong Code"
 Image {
   /* */
 }
 ```
 
-```css title="✅ Correct Code - HTML"
+```css title="✅ Correct Code"
 .image {
   /* */
 }
