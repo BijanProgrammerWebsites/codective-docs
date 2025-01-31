@@ -81,7 +81,9 @@ h3 {
 }
 
 .custom-code-block-warning-line,
-.custom-code-block-error-line {
+.custom-code-block-error-line,
+.custom-code-block-diff-remove-line,
+.custom-code-block-diff-add-line {
   display: block;
 
   inline-size: 100%;
@@ -100,6 +102,18 @@ h3 {
   background-color: hsl(0deg 100% 50% / 0.1);
 
   border-inline-start: 3px solid hsl(0deg 100% 50% / 0.5);
+}
+
+.custom-code-block-diff-remove-line {
+  background-color: hsl(0deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(0deg 100% 50% / 0.5);
+}
+
+.custom-code-block-diff-add-line {
+  background-color: hsl(120deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(120deg 100% 50% / 0.5);
 }
 
 .custom-code-block-strike-line {

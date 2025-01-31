@@ -70,6 +70,10 @@ const config: Config = {
           title: "مستندات",
           items: [
             {
+              label: "Clean Code",
+              to: "/docs/clean-code",
+            },
+            {
               label: "React",
               to: "/docs/react",
             },
@@ -129,8 +133,22 @@ const config: Config = {
           line: "error-next-line",
         },
         {
+          className: "custom-code-block-diff-remove-line",
+          line: "diff-remove-next-line",
+          block: { start: "diff-remove-start", end: "diff-remove-end" },
+        },
+        {
+          className: "custom-code-block-diff-add-line",
+          line: "diff-add-next-line",
+          block: { start: "diff-add-start", end: "diff-add-end" },
+        },
+        {
           className: "custom-code-block-strike-line",
           line: "strike-next-line",
+        },
+        {
+          className: "custom-code-block-prettier-ignore",
+          line: "prettier-ignore",
         },
       ],
     },
