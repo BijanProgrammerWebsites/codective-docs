@@ -53,16 +53,14 @@ const config: Config = {
       },
       items: [
         {
-          type: "doc",
-          docId: "/guides/clean-code",
-          position: "left",
+          to: "/guides/clean-code",
           label: "Clean Code",
+          position: "left",
         },
         {
-          type: "doc",
-          docId: "/bootcamps/react",
-          position: "left",
+          to: "/bootcamps/react",
           label: "React Bootcamp",
+          position: "left",
         },
         {
           href: "https://github.com/BijanProgrammerWebsites/codective-docs",
