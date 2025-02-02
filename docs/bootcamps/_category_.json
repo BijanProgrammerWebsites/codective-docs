@@ -1,8 +1,8 @@
 {
-  "label": "React Bootcamp",
+  "label": "Bootcamps",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "slug": "react"
+    "slug": "bootcamps"
   }
 }

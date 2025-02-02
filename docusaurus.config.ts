@@ -32,6 +32,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
+          path: "docs",
+          routeBasePath: "/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -51,10 +53,16 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "docsSidebar",
+          type: "doc",
+          docId: "/guides/clean-code",
           position: "left",
-          label: "مستندات",
+          label: "Clean Code",
+        },
+        {
+          type: "doc",
+          docId: "/bootcamps/react",
+          position: "left",
+          label: "React Bootcamp",
         },
         {
           href: "https://github.com/BijanProgrammerWebsites/codective-docs",
@@ -71,11 +79,11 @@ const config: Config = {
           items: [
             {
               label: "Clean Code",
-              to: "/docs/clean-code",
+              to: "/guides/clean-code",
             },
             {
-              label: "React",
-              to: "/docs/react",
+              label: "React Bootcamp",
+              to: "/bootcamps/react",
             },
           ],
         },
