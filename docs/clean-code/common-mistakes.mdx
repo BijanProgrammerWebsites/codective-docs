@@ -1,9 +1,4 @@
----
-sidebar_position: 2
-description: ""
----
-
-# اشتباهات رایج
+import CssRoundedCornersComponent from "@site/src/components/common-mistakes/css-rounded-corners/css-rounded-corners.component.tsx";
 
 ## CSS
 
@@ -99,3 +94,20 @@ body > header {
 
 - [MDN - Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator)
 - [MDN - Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator)
+
+### متفرقه
+
+#### گوشه‌های گرد
+
+تو CSS برای اینکه گوشه‌ها رو گرد کنیم، می‌تونیم از `border-radius` استفاده کنیم.
+به طور کلی دو مقدار می‌تونیم در نظر بگیریم:
+
+1. `50%`
+2. یه مقدار خیلی بزرگ مثل `999rem`
+
+تفاوت این دو رو می‌تونید تو مثال زیر ببینید:
+
+<CssRoundedCornersComponent />
+
+همونطور که مشخصه، زمانی که Width و Height یکسان نباشن، استفاده از `50%` خیلی ظاهر خوبی ایجاد نمی‌کنه.
+بنابراین بهتره همیشه از یه مقدار خیلی بزرگ برای Rounded Corners استفاده کنیم که همیشه ظاهر خوبی داشته باشیم.

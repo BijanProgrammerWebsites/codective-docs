@@ -1,0 +1,22 @@
+.css-rounded-corners {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-block: var(--ifm-leading);
+
+  .shape {
+    background-color: var(--ifm-color-primary);
+    color: var(--ifm-button-color);
+
+    padding: 1rem;
+
+    &.fifty-percent {
+      border-radius: 50%;
+    }
+
+    &.large-number {
+      border-radius: 999rem;
+    }
+  }
+}
