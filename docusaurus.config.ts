@@ -53,6 +53,11 @@ const config: Config = {
       },
       items: [
         {
+          to: "/general",
+          label: "عمومی",
+          position: "left",
+        },
+        {
           to: "/guides/clean-code",
           label: "Clean Code",
           position: "left",
@@ -75,6 +80,10 @@ const config: Config = {
         {
           title: "مستندات",
           items: [
+            {
+              label: "عمومی",
+              to: "/general",
+            },
             {
               label: "Clean Code",
               to: "/guides/clean-code",
