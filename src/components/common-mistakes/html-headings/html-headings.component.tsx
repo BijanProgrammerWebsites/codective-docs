@@ -10,8 +10,6 @@ type Props = {
 };
 
 export default function HtmlHeadingsComponent({ toc }: Props): ReactElement {
-  console.log(toc);
-
   const code = toc
     .map((heading) => {
       const indent = "  ".repeat(heading.level - 1);
