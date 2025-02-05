@@ -564,6 +564,24 @@ body > header {
 - [MDN - Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator)
 - [MDN - Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator)
 
+#### اسم کلاس‌ها
+
+اسم کلاس‌ها نباید بر مبنای جهت باشه. این کد رو در نظر بگیرید:
+
+```html
+<div>
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+```
+
+این اسامی تا زمانی که `direction` ثابت باشه منطقی هستن؛
+اما اگه زبان سایت مثلاً از انگلیسی به فارسی تغییر کنه،
+اون موقع جهت سایت از `ltr` به `rtl` تغییر می‌کنه و جای این دو المان عوض میشه
+و دیگه این اسامی منطقی نخواهند بود.
+
+به جاش باید اسامی رو بر مبنای کاربردی که اون المان تو صفحه داره انتخاب کنید.
+
 ### متفرقه
 
 #### گوشه‌های گرد
