@@ -45,6 +45,11 @@
   line-height: 1;
 }
 
+code {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
 .theme-code-block {
   direction: rtl;
 }

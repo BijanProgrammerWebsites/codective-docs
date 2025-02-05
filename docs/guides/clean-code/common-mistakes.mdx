@@ -8,6 +8,199 @@ import HtmlHeadingsComponent from "@site/src/components/common-mistakes/html-hea
 
 # اشتباهات رایج
 
+## مشترک
+
+### Case Styles
+
+تو برنامه‌نویسی بخش‌های مختلف یک خط کد رو با Space از هم جدا می‌کنیم تا Compiler بتونه دستور ما رو متوجه بشه.
+
+به عنوان مثال، اینجا بین کلمات Space گذاشتیم تا اسامی و کلیدواژه‌ها و... از هم قابل‌تفکیک باشن:
+
+```javascript
+const name = "Bijan";
+```
+
+به همین خاطر، اگه بخوایم از عبارتی استفاده کنیم که شامل چند کلمه باشه، نمی‌تونیم بین کلمات Space بذاریم.
+
+به عنوان مثال، این کد اشتباهه:
+
+```javascript
+// error-next-line
+const first name = "Bijan";
+```
+
+یه مفهومی به اسم Case Styles وجود داره که به ما میگه کلماتِ یک عبارت رو چطور بنویسیم.
+
+هر Case Style کاربرد خاص خودش رو داره که اینجا سعی می‌کنیم به چند مورد اشاره کنیم.
+
+#### lowercase
+
+تمام حروف رو کوچیک می‌نویسیم.
+کلمات باید بدون فاصله به هم بچسبن.
+
+```html title="HTML"
+<!-- Tag -->
+<textarea></textarea>
+
+<!-- Attribute -->
+<button onmouseenter="chiz()"></button>
+```
+
+:::note علت نام‌گذاری
+
+تو چاپخونه‌های قدیمی، از حروف فلزی برای چاپ استفاده می‌کردن
+که تو دو کشو تقسیم‌شون کرده بودن.
+کشوی بالایی مربوط به حروف بزرگ بود (Upper Case)،
+وکشوی پایینی مربوط به حروف کوچیک (Lower Case).
+
+:::
+
+#### UPPERCASE
+
+تمام حروف رو بزرگ می‌نویسیم.
+کلمات باید بدون فاصله به هم بچسبن.
+
+:::info
+
+این Case Style معمولاً خیلی تو وب استفاده نمیشه.
+
+:::
+
+:::note علت نام‌گذاری
+
+تو قسمت lowercase توضیح داده شد.
+
+:::
+
+#### PascalCase
+
+حرف اول هر کلمه رو بزرگ و باقی حروف رو کوچیک می‌نویسیم.
+
+```javascript title="JavaScript"
+// Class
+class SqlOrm {}
+```
+
+```typescript title="TypeScript"
+// Type
+type UserAddress = {};
+
+// Interface
+interface ChocolateFactory {}
+
+// Enum
+enum FileUploadStatus {}
+```
+
+```jsx title="React"
+// Component
+function EditUserForm() {}
+```
+
+:::note علت نام‌گذاری
+
+تو زبان برنامه‌نویسی Pascal ازش استفاده میشد.
+
+:::
+
+#### camelCase
+
+دقیقاً مشابه PascalCase ولی حرف اولِ اولین کلمه باید کوچیک باشه.
+
+```javascript title="JavaScript"
+// Variable
+const firstName = "";
+
+// Object Key
+const user = {
+  username: "",
+  password: "",
+  isAdmin: false,
+};
+
+// Function
+function sortItemsByName() {}
+const fetchAllPosts = () => {};
+
+// Function Parameter
+function fetchMeSomething(baseUrl, httpHeaders) {}
+
+// Class Field
+class Shape {
+  sidesCount;
+  register() {}
+  login() {}
+}
+```
+
+:::note علت نام‌گذاری
+
+وقتی عبارت رو می‌نویسیم، شبیه به شتری میشه که از بغل داریم بهش نگاه می‌کنیم و کوهان‌هاش بالاتر از بقیه‌ی بدنش قرار دارن.
+
+:::
+
+#### kebab-case
+
+تمام حروف رو کوچیک می‌نویسیم و کلمات رو با خط تیره (Hyphen) از هم جدا می‌کنیم.
+
+```html title="HTML & CSS"
+<!-- ID -->
+<button id="remove-user">Remove User</button>
+
+<!-- Class -->
+<img class="user-profile-picture" src="" alt="" />
+```
+
+:::info
+
+برای نام‌گذاری تمام فایل‌ها و فولدرها باید از kebab-case استفاده کنیم.
+
+:::
+
+:::note علت نام‌گذاری
+
+شبیه به کبابه؛ کلمات گوشتن و خط تیره‌ی بینشون سیخه.
+
+:::
+
+#### snake_case
+
+تمام حروف رو کوچیک می‌نویسیم و کلمات رو با Underline از هم جدا می‌کنیم.
+
+:::info
+
+این Case Style معمولاً خیلی تو وب استفاده نمیشه.
+
+:::
+
+:::note علت نام‌گذاری
+
+شبیه به ماره؛ چون تمام کاراکترها، حتی Underline، روی زمین قرار دارن و انگار بدن یه ماره که داره میخزه.
+
+:::
+
+#### SCREAMING_SNAKE_CASE
+
+تمام حروف رو بزرگ می‌نویسیم و کلمات رو با Underline از هم جدا می‌کنیم.
+
+```typescript title="TypeScript"
+// Enum Key
+enum FileUploadStatus {
+  PENDING,
+  SUCCESSFUL,
+  FAILED,
+}
+
+// Readonly Variable
+const OPTIONS = ["to be", "not to be"] as const;
+```
+
+:::note علت نام‌گذاری
+
+شبیه به snake_case ئه اما تمام حروفش بزرگن و انگار دارن فریاد میزنن.
+
+:::
+
 ## HTML
 
 ### Headings
@@ -166,6 +359,75 @@ body main {
   margin-block: 1rem;
 }
 ```
+
+### Custom Properties
+
+منظور از Custom Properties همون متغیرهای CSS ئه که به این شکل می‌تونیم تعریفشون کنیم:
+
+```css
+:root {
+  --color-primary: hsl(210deg 80% 35%);
+}
+
+.button.primary {
+  background-color: var(--color-primary);
+}
+```
+
+#### متغیرهای رنگ
+
+فرض کنید تو سایتمون از یه رنگ به عنوان رنگ اصلی می‌خوایم استفاده کنیم.
+اگه واسش متغیر تعریف نکنیم، مجبوریم هر موقع که می‌خوایم ازش استفاده کنیم،
+دوباره مقدارش رو بنویسیم یا از یه جای دیگه Copy/Paste کنیم.
+
+این کار می‌تونه باعث بروز اشتباه انسانی و باگ بشه.
+مثلاً ممکنه دستمون بخوره و یه عدد کم و زیاد شه.
+
+از طرفی اگه در آینده بخوایم رنگ اصلی سایت رو عوض کنیم، مجبوریم تمام جاهایی که استفاده‌شده رو پیدا کنیم و تغییرشون بدیم.
+
+به جاش می‌تونیم یه متغیر براش تعریف کنیم:
+
+```css
+:root {
+  --color-primary: hsl(210deg 80% 35%);
+}
+
+.button.primary {
+  background-color: var(--color-primary);
+}
+
+input:focus {
+  outline: 1px solid var(--color-primary);
+}
+
+img {
+  border: 1px solid var(--color-primary);
+}
+```
+
+اینجوری هر موقع بخوایم مقدار رو عوض کنیم، فقط یه جا رو تغییر می‌دیم و باقی سایت خود‌به‌خود اصلاح میشه.
+
+#### اسم متغیرها
+
+اسم متغیرها باید بر اساس کاری باشه که انجام میدن.
+به عنوان مثال اگه یه متغیر برای رنگ اصلی داریم تعریف می‌کنیم،
+اسمش باید `--color-primary` باشه.
+
+```css title="❌ Wrong Code"
+.chiz {
+  --color-blue: hsl(210deg 80% 35%);
+}
+```
+
+```css title="✅ Correct Code"
+.chiz {
+  --color-primary: hsl(210deg 80% 35%);
+}
+```
+
+تو کد اول مشکلی که پیش میاد اینه که اگه در آینده بخوایم رنگ رو عوض کنیم، اسم متغیر دیگه معنی نمیده؛
+بنابراین مجبور میشیم بریم تمام جاهایی که از اون متغیر استفاده کردیم رو تغییر بدیم؛
+در صورتی که اصن از اول به خاطر این از متغیرها استفاده کردیم که صرفاً با عوض‌کردن یه خط، بتونیم کل سایت رو تغییر بدیم.
 
 ### Units
 
