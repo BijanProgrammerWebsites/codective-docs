@@ -54,6 +54,11 @@ code {
   direction: rtl;
 }
 
+.theme-code-block div[class^="codeBlockTitle"] {
+  unicode-bidi: plaintext;
+  text-align: end;
+}
+
 .theme-code-block pre code {
   max-height: 40rem;
 }
