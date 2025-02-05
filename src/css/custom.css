@@ -56,7 +56,7 @@ code {
 
 .theme-code-block div[class^="codeBlockTitle"] {
   unicode-bidi: plaintext;
-  text-align: end;
+  text-align: right;
 }
 
 .theme-code-block pre code {
