@@ -1,0 +1,49 @@
+#__docusaurus {
+  min-height: 100vh !important;
+}
+
+.navbar__item.navbar__link {
+  display: flex;
+  align-items: baseline;
+
+  line-height: 1;
+}
+
+code {
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+.theme-code-block {
+  direction: rtl;
+}
+
+.theme-code-block div[class^="codeBlockTitle"] {
+  unicode-bidi: plaintext;
+  text-align: right;
+}
+
+.theme-code-block pre code {
+  max-height: 40rem;
+}
+
+.theme-code-block pre code .token-line {
+  float: inherit;
+  clear: both;
+}
+
+.theme-code-block pre + div {
+  right: unset;
+  left: calc(var(--ifm-pre-padding) / 2);
+}
+
+.theme-doc-markdown.markdown img {
+  display: block;
+  margin: auto;
+}
+
+h3 {
+  padding-block-end: 0.5rem;
+
+  border-block-end: 1px solid currentColor;
+}

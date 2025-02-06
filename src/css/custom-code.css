@@ -1,0 +1,45 @@
+.theme-code-block-highlighted-line {
+  inline-size: 100%;
+
+  border-inline-start: 3px solid hsl(210deg 100% 50% / 0.5);
+}
+
+.custom-code-block-warning-line,
+.custom-code-block-error-line,
+.custom-code-block-diff-remove-line,
+.custom-code-block-diff-add-line {
+  display: block;
+
+  inline-size: 100%;
+
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.custom-code-block-warning-line {
+  background-color: hsl(30deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(30deg 100% 50% / 0.5);
+}
+
+.custom-code-block-error-line {
+  background-color: hsl(0deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(0deg 100% 50% / 0.5);
+}
+
+.custom-code-block-diff-remove-line {
+  background-color: hsl(0deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(0deg 100% 50% / 0.5);
+}
+
+.custom-code-block-diff-add-line {
+  background-color: hsl(120deg 100% 50% / 0.1);
+
+  border-inline-start: 3px solid hsl(120deg 100% 50% / 0.5);
+}
+
+.custom-code-block-strike-line {
+  text-decoration: line-through;
+}

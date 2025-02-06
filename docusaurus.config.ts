@@ -37,7 +37,7 @@ const config: Config = {
           routeBasePath: "/",
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: ["./src/css/custom-ifm.css", "./src/css/custom-layout.css", "./src/css/custom-code.css"],
         },
       } satisfies Preset.Options,
     ],
