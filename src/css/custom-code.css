@@ -8,36 +8,38 @@
 .custom-code-block-error-line,
 .custom-code-block-diff-remove-line,
 .custom-code-block-diff-add-line {
+  --border-width: 3px;
+
+  background-color: var(--background-color);
+
   display: block;
 
   inline-size: 100%;
 
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+  margin-inline: calc(-1 * var(--ifm-pre-padding));
+  padding-inline: calc(var(--ifm-pre-padding) - var(--border-width));
+
+  border-inline-start: var(--border-width) solid var(--border-color);
 }
 
 .custom-code-block-warning-line {
-  background-color: hsl(30deg 100% 50% / 0.1);
-
-  border-inline-start: 3px solid hsl(30deg 100% 50% / 0.5);
+  --background-color: hsl(30deg 100% 50% / 0.1);
+  --border-color: hsl(30deg 100% 50% / 0.5);
 }
 
 .custom-code-block-error-line {
-  background-color: hsl(0deg 100% 50% / 0.1);
-
-  border-inline-start: 3px solid hsl(0deg 100% 50% / 0.5);
+  --background-color: hsl(0deg 100% 50% / 0.1);
+  --border-color: hsl(0deg 100% 50% / 0.5);
 }
 
 .custom-code-block-diff-remove-line {
-  background-color: hsl(0deg 100% 50% / 0.1);
-
-  border-inline-start: 3px solid hsl(0deg 100% 50% / 0.5);
+  --background-color: hsl(0deg 100% 50% / 0.1);
+  --border-color: hsl(0deg 100% 50% / 0.5);
 }
 
 .custom-code-block-diff-add-line {
-  background-color: hsl(120deg 100% 50% / 0.1);
-
-  border-inline-start: 3px solid hsl(120deg 100% 50% / 0.5);
+  --background-color: hsl(120deg 100% 50% / 0.1);
+  --border-color: hsl(120deg 100% 50% / 0.5);
 }
 
 .custom-code-block-strike-line {
