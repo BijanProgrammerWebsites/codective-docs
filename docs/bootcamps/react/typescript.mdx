@@ -5,11 +5,9 @@ description: ""
 
 import QueueComponent from "@site/src/components/queue/queue.component.tsx";
 
-# جلسه 2
+# TypeScript
 
-## TypeScript
-
-### مقدمه
+## مقدمه
 
 من اینجا فقط مباحثی از TypeScript که برای React احتیاج دارید رو توضیح میدم.
 اگه کسی دوست داره جداگانه در مورد راه‌اندازی TypeScript و Configهایی که داره اطلاعات به‌دست بیاره،
@@ -18,7 +16,7 @@ import QueueComponent from "@site/src/components/queue/queue.component.tsx";
 - [بهترین راه شروع پروژه TypeScript - خشت اول (آپارات)](https://www.aparat.com/v/ghca793)
 - [بهترین راه شروع پروژه TypeScript - خشت اول (YouTube)](https://www.youtube.com/watch?v=ePp4JnuXBIs&t=4313s)
 
-### راه‌اندازی
+## راه‌اندازی
 
 من یه Repo دارم که تو ویدئوی بالا کامل توضیح دادم چطور باید راه‌اندازیش کنید.
 اینجا صرفاً میخوایم ازش استفاده کنیم برای اینکه یه محیطی داشته باشیم که بتونیم توش کد TypeScript بنویسیم.
@@ -39,11 +37,11 @@ npm i
 npm run dev
 ```
 
-### مشکل چی بود؟
+## مشکل چی بود؟
 
 به طوری کلی JavaScript سه مشکل اساسی داشت که به همین خاطر زبانی مثل TypeScript به وجود اومد:
 
-#### عدم وجود Type Safety
+### عدم وجود Type Safety
 
 تو JavaScript شما میتونید یه همچین تابعی داشته باشید:
 
@@ -97,7 +95,7 @@ auth({ email, password }).then(console.log); // { status: 404, message: "User no
 
 اما تو TypeScript، تایپ `user` مشخصه و اگه اشتباهی `email` پاس بدید، همون موقع بهتون خطا میده و جلوی اشتباه رو می‌گیره.
 
-#### عدم پیشنهاد بر اساس تایپ
+### عدم پیشنهاد بر اساس تایپ
 
 همون مثال ساده رو در نظر بگیرید:
 
@@ -112,13 +110,13 @@ function minus(a, b) {
 
 اما تو TypeScript بر اساس تایپ پارامتر، بهتون میگه چه آرگومانی رو می‌تونید به تابع پاس بدید.
 
-#### عدم خطایابی قبل از اجرای کد
+### عدم خطایابی قبل از اجرای کد
 
 تو JavaScript تا زمانی که کد رو اجرا نکنید، نمی‌تونید متوجه بشید خطا دارید یا نه.
 
 اما تو TypeScript همون موقع که مشغول نوشتن کد هستید، خطا رو بهتون نشون میده.
 
-### TypeScript
+## TypeScript
 
 تایپ‌اسکریپت یه زبان برنامه‌نویسیه که بر مبنای JavaScript نوشته شده.
 اصطلاحاً میگن Supersetشه.
@@ -134,7 +132,7 @@ function minus(a, b) {
 در ادامه به بررسی مهم‌ترین ویژگی‌های TypeScript می‌پردازیم.
 این ویژگی‌ها برای کار با React گلچین شدن.
 
-### Basic Types
+## Basic Types
 
 تو JavaScript هم تایپ داریم اما خیلی سختگیرانه ازشون استفاده نمی‌کنیم.
 مثلاً این کد درسته:
@@ -176,7 +174,7 @@ const friends2: Array<string> = ["Geller", "Green", "Bing", "Geller", "Tribbiani
 
 :::
 
-### Types by Inference
+## Types by Inference
 
 اگه زمانی که متغیر رو تعریف می‌کنیم، همون موقع هم مقداردهی‌ش کنیم،
 خودِ TypeScript تایپش رو می‌فهمه.
@@ -194,7 +192,7 @@ let message = "Hello, friend!";
 
 :::
 
-### کاربرد
+## کاربرد
 
 اینجا چندتا مثال میزنم از به کار بردن تایپ‌ها تو جاهای مختلف پروژه.
 
@@ -234,7 +232,7 @@ class Circle {
 }
 ```
 
-### Custom Types
+## Custom Types
 
 علاوه بر تایپ‌های پایه، می‌تونیم تایپ‌ها رو با هم ترکیب کنیم
 و تایپ‌های پیچیده بسازیم.
@@ -266,7 +264,7 @@ const status: Status = "inactive";
 
 :::
 
-### Object Types
+## Object Types
 
 ما تو JavaScript می‌تونیم از `interface` استفاده کنیم تا شکل و شمایل یه `object` رو مشخص کنیم:
 
@@ -330,7 +328,7 @@ class SqlDatabase implements Database {
 طبق مستندات TypeScript، شما باید به طور پیش‌فرض از `interface` استفاده کنید
 و زمانی سراغ `type` برید که واقعاً بهش نیاز دارید.
 
-### Intersection
+## Intersection
 
 تو TypeScript می‌تونیم تایپ‌ها رو با هم اشتراک بگیریم.
 به عنوان مثال فرض کنیم از قبل یه تایپ به اسم Person داریم.
@@ -350,7 +348,7 @@ type User = Person & {
 };
 ```
 
-### Type Assertions
+## Type Assertions
 
 بعضی مواقع هست که ما به عنوان برنامه‌نویس،
 بیشتر از TypeScript اطلاعات داریم.
@@ -413,7 +411,7 @@ const button = document.querySelector("button") as number;
 
 :::
 
-### Narrowing
+## Narrowing
 
 به این مثال توجه کنید:
 
@@ -546,7 +544,7 @@ function perform({ action, value, multiplier }: Params): number {
 
 به این ویژگیِ TypeScript میگن Narrowing.
 
-### Discriminated Unions
+## Discriminated Unions
 
 ما می‌تونیم پا رو فراتر بذاریم و به TypeScript بگیم تایپ فیلدهامون رو بر اساس مقدار یه فیلد خاص در نظر بگیره.
 
@@ -596,11 +594,11 @@ function perform(params: Params): number {
 بلافاصله بعد از اینکه `action` رو تعیین کردید،
 خودِ IDE باقی فیلدها رو بهتون پیشنهاد میده.
 
-### TypeScript-specific Types
+## TypeScript-specific Types
 
 یه سری تایپ‌ها هستن که مخصوصِ TypeScriptـن و تو JavaScript وجود نداشتن.
 
-#### any
+### any
 
 هموطنور که از اسمش مشخصه، از این تایپ زمانی استفاده می‌کنیم که بخوایم بگیم متغیرمون می‌تون هر چیزی باشه.
 این تایپ یه جورایی ما رو برمیگردونه به JavaScript. به این معنا که دیگه Type Safety نخواهیم داشت.
@@ -628,7 +626,7 @@ const n: number = obj;
 
 :::
 
-#### unknown
+### unknown
 
 از این تایپ زمانی استفاده می‌کنیم که نمی‌دونیم تایپ متغیرمون چیه.
 از خیلی جهات شبیه به `any` ئه اما خوبیش اینه که استفاده ازش بی‌خطره؛
@@ -656,7 +654,7 @@ function increment(x: unknown) {
 }
 ```
 
-#### never
+### never
 
 این تایپ زمانی استفاده میشه که امکان نداشته باشه چنین چیزی وجود داشته باشه.
 
@@ -679,7 +677,7 @@ function fn(x: string | number) {
 پس اصن امکان نداره به شرط آخر برسیم.
 بنابراین تایپ `x` اونجا برابر با `never` میشه.
 
-#### void
+### void
 
 از این تایپ به عنوان خروجی توابع استفاده می‌کنیم.
 زمانی که تابع هیچ `return`ـی نداشته باشه، یا اگه داره، مقدار خاصی برنمی‌گردونه، از `void` استفاده می‌کنیم.
@@ -701,7 +699,7 @@ function yaroo(): void {
 
 :::
 
-### Generic
+## Generic
 
 قبلاً گفتیم میشه آرایه رو به دو روش تعریف کرد:
 
@@ -801,7 +799,7 @@ const queue = new Queue<Person>();
 queue.enqueue({ firstName: "Bijan", lastName: "Eisapour" });
 ```
 
-### Utility Types
+## Utility Types
 
 تو TypeScript می‌تونیم از یه سری تایپ آماده استفاده کنیم تا تایپ‌های جدید بسازیم.
 به این نوع از تایپ‌ها Utility Types میگن.
@@ -818,7 +816,7 @@ queue.enqueue({ firstName: "Bijan", lastName: "Eisapour" });
 
 :::
 
-#### Pick
+### Pick
 
 از این تایپ زمانی استفاده می‌کنیم که
 بخوایم یک یا چند فیلد مختلف از یه تایپ دیگه رو گلچین کنیم و باهاشون یه تایپ جدید بسازیم.
@@ -841,7 +839,7 @@ type Person = Pick<User, "name" | "address">;
 
 :::
 
-#### Omit
+### Omit
 
 از این تایپ زمانی استفاده می‌کنیم که
 بخوایم یک یا چند فیلد رو از یه تایپ دیگه حذف کنیم و با باقی فیلدها یه تایپ جدید بسازیم.
@@ -857,7 +855,7 @@ type User = {
 type Person = Omit<User, "username" | "password">;
 ```
 
-#### ReturnType
+### ReturnType
 
 از این تایپ زمانی استفاده می‌کنیم که
 بخوایم تایپ خروجی یه تابع رو به دست بیاریم.
@@ -877,7 +875,7 @@ type Response = ReturnType<typeof create>;
 
 :::
 
-### Further Reading
+## Further Reading
 
 فیچپرهای TypeScript خیلی خیلی بیشتر از چیزیه که اینجا بهش اشاره کردیم؛
 اما همین چیزایی که گفتیم برای این بوت‌کمپ کافیه.
