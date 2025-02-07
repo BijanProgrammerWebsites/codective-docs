@@ -9,6 +9,10 @@
   line-height: 1;
 }
 
+.markdown li a {
+  unicode-bidi: plaintext;
+}
+
 code {
   direction: rtl;
   unicode-bidi: isolate;
