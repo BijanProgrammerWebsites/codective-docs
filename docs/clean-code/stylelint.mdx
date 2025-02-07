@@ -1,0 +1,56 @@
+---
+description: ""
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import StylelintConfig from "!!raw-loader!./assets/partials/.stylelintrc.json";
+
+# Stylelint
+
+## مقدمه
+
+معمولاً هر شخص وقتی کد CSS می‌نویسه، برای اون قواعدی در نظر می‌گیره؛
+مثلاً ترتیب و اولویت Propertyهای مختلف یا استفاده از یه فرمت رنگ خاص.
+اما وقتی به صورت تیمی روی پروژه‌ای کار می‌کنید،
+بهتره این قواعد به صورت عمومی اعمال بشن
+تا کدی که در نهایت نوشته میشه برای همه قابل‌فهم و توی یه چارچوب باشه.
+Stylelint
+ابزاریه که به ما امکان تعریف چنین قواعدی رو می‌ده.
+
+بیشتر بدانیم:
+
+- [Getting Started](https://stylelint.io/user-guide/get-started)
+- [Rules](https://stylelint.io/user-guide/rules)
+
+## راه‌اندازی
+
+برای افزودن Stylelint به پروژه‌ی خود، از دستور زیر استفاده کنید:
+
+```shell
+npm install -D stylelint stylelint-order postcss
+```
+
+با اجرای دستور بالا علاوه بر پکیج `stylelint` دو پکیج دیگه هم به پروژه اضافه می‌شن
+که اولی برای تعیین ترتیب Propertyها استفاده میشه و دومی پکیج معروف PostCSS ئه که به عنوان Dependency بهش نیاز داریم.
+
+## تنظیمات
+
+برای تنظیم قواعد، یه فایل با نام
+`.stylelintrc.json`
+بسازید.
+
+تنظیمات پیشنهادی من اینجا آورده شده.
+سعی کردم لیست کاملی از Propertyها رو اینجا بیارم؛
+اما ممکنه نقص‌هایی داشته باشه که به مرور زمان کاملش می‌کنم.
+
+<CodeBlock language="json">{StylelintConfig}</CodeBlock>
+
+## WebStorm
+
+برای فعال کردن تنظیمات Stylelint در WebStorm، مراحل زیر رو طی کنید:
+
+1. از بالا-چپ روی علامت سه‌نقطه کلیک کنید تا منوی `File` باز شه.
+2. رو `Settings` کلیک کنید تا پنجره‌ی تنظیمات باز شه.
+3. عبارت `Stylelint` رو توی باکس بالا-چپ جست‌وجو کنید.
+4. از قسمت سمت چپ روی گزینه‌ی `Languages & Frameworks > Style Sheets > Stylelint` کلیک کنید.
+5. تیک گزینه‌ی `Enable` رو فعال کنید.
