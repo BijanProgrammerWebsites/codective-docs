@@ -138,6 +138,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.vsDark,
+      additionalLanguages: ["diff"],
       magicComments: [
         {
           className: "theme-code-block-highlighted-line",
