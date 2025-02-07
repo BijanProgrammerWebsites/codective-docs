@@ -94,10 +94,6 @@ const config: Config = {
               to: "/typescript",
             },
             {
-              label: "React",
-              to: "/react",
-            },
-            {
               label: "GitHub",
               to: "/github",
             },
