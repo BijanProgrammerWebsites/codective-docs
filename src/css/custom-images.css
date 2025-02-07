@@ -1,0 +1,4 @@
+[data-theme="light"] img[src$="#dark-mode"],
+[data-theme="dark"] img[src$="#light-mode"] {
+  display: none;
+}
