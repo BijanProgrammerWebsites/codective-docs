@@ -61,4 +61,4 @@ Prettier
    ```
 7. گزینه‌ی `Run on save` رو فعال کنید.
 
-![تنظیمات Prettier در WebStorm](assets/screenshots/prettier-webstorm.jpg)
+![تنظیمات Prettier در WebStorm](../assets/screenshots/prettier-webstorm.jpg)
