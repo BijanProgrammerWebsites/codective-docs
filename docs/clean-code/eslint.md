@@ -60,4 +60,4 @@ ESLint: 'chiz' is never reassigned. Use 'const' instead. (prefer-const)
 
 :::
 
-![تنظیمات ESLint در WebStorm](./assets/screenshots/eslint-webstorm.jpg)
+![تنظیمات ESLint در WebStorm](assets/screenshots/eslint-webstorm.jpg)

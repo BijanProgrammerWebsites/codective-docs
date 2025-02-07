@@ -59,13 +59,13 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/guides/clean-code",
+          to: "/clean-code",
           label: "Clean Code",
           position: "left",
         },
         {
-          to: "/bootcamps/react",
-          label: "React Bootcamp",
+          to: "/typescript",
+          label: "Typescript",
           position: "left",
         },
         {
@@ -87,11 +87,19 @@ const config: Config = {
             },
             {
               label: "Clean Code",
-              to: "/guides/clean-code",
+              to: "/clean-code",
             },
             {
-              label: "React Bootcamp",
-              to: "/bootcamps/react",
+              label: "Typescript",
+              to: "/typescript",
+            },
+            {
+              label: "React",
+              to: "/react",
+            },
+            {
+              label: "GitHub",
+              to: "/github",
             },
           ],
         },

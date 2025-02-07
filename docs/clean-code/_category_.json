@@ -1,9 +1,9 @@
 {
   "label": "Clean Code",
-  "position": 1,
+  "position": 2,
   "link": {
     "type": "generated-index",
-    "slug": "/guides/clean-code",
+    "slug": "/clean-code",
     "description": "مجموعه‌ای از Best Practiceها و Anti-patternها."
   }
 }

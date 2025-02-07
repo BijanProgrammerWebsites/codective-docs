@@ -24,11 +24,11 @@ function HomepageHeader() {
           <Link className="button button--secondary button--lg" to="/general">
             عمومی
           </Link>
-          <Link className="button button--secondary button--lg" to="/guides/clean-code">
+          <Link className="button button--secondary button--lg" to="/clean-code">
             Clean Code
           </Link>
-          <Link className="button button--secondary button--lg" to="/bootcamps/react">
-            React Bootcamp
+          <Link className="button button--secondary button--lg" to="/typescript">
+            Typescript
           </Link>
         </div>
       </div>
