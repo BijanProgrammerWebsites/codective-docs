@@ -527,27 +527,6 @@ body > header {
 
 به جاش باید اسامی رو بر مبنای کاربردی که اون المان تو صفحه داره انتخاب کنید.
 
-### CSS Modules
-
-اگه تو پروژه CSS Modules داشته باشیم،
-اسم کلاس همزمان تو CSS و JavaScript استفاده می‌شه؛
-بنابراین مختاریم بین kebab-case یا camelCase انتخاب کنیم.
-
-```jsx title="طبق استاندارد CSS"
-<input className={styles["global-search-box"]} />
-```
-
-```jsx title="طبق استاندارد JavaScript"
-<input className={styles.globalSearchBox} />
-```
-
-:::warning
-
-توجه داشته باشید که باید یکی رو انتخاب کنید و تو کل پروژه از همون استفاده کنید.
-نباید بعضی جاها kebab-case و بعضی جاهای دیگه camelCase باشه.
-
-:::
-
 ### فونت
 
 #### فونت اصلی
@@ -601,6 +580,27 @@ optgroup {
 چون فونتیه که سیستم عامل ازش استفاده می‌کنه؛
 بنابراین چشم کاربرش بهش عادت داره.
 از طرفی تو زبان فارسی هم ظاهر نسبتاً خوبی داره.
+
+:::
+
+### CSS Modules
+
+اگه تو پروژه CSS Modules داشته باشیم،
+اسم کلاس همزمان تو CSS و JavaScript استفاده می‌شه؛
+بنابراین مختاریم بین kebab-case یا camelCase انتخاب کنیم.
+
+```jsx title="طبق استاندارد CSS"
+<input className={styles["global-search-box"]} />
+```
+
+```jsx title="طبق استاندارد JavaScript"
+<input className={styles.globalSearchBox} />
+```
+
+:::warning
+
+توجه داشته باشید که باید یکی رو انتخاب کنید و تو کل پروژه از همون استفاده کنید.
+نباید بعضی جاها kebab-case و بعضی جاهای دیگه camelCase باشه.
 
 :::
 
