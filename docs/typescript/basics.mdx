@@ -141,16 +141,7 @@ const status: Status = "inactive";
 
 ## Object Types
 
-ما تو JavaScript می‌تونیم از `interface` استفاده کنیم تا شکل و شمایل یه `object` رو مشخص کنیم:
-
-```typescript
-interface Person {
-  firstName;
-  lastName;
-}
-```
-
-تو TypeScript، علاوه بر `interface`، با تایپ هم میشه این کارو انجام داد:
+تو TypeScript، می‌تونیم با استفاده از `interface` یا `type`، شکل و شمایل `object`ها رو مشخص کنیم:
 
 ```typescript
 interface Person {
@@ -168,37 +159,7 @@ type Person = {
 و می‌تونیم از هر کدوم که می‌خوایم استفاده کنیم.
 اما تفاوت‌هایی هم با هم دارن.
 
-به‌عنوان مثال، شما می‌تونید از `interface` برای تعیین ساختار `class` استفاده کنید اما با `type` نمیشه این کارو انجام داد:
-
-```typescript
-interface Database {
-  create: () => void;
-  read: () => void;
-  update: () => void;
-  delete: () => void;
-}
-
-class SqlDatabase implements Database {
-  create(): void {
-    // ...
-  }
-
-  delete(): void {
-    // ...
-  }
-
-  read(): void {
-    // ...
-  }
-
-  update(): void {
-    // ...
-  }
-}
-```
-
-از طرفی با `type` میشه یه سری تایپ خیلی پیشرفته درست کرد که با `interface` نمیشه.
-بعضی از این کاربردها رو در طول دوره یاد می‌گیریم.
+به‌عنوان مثال، با `type` میشه یه سری تایپ خیلی پیشرفته درست کرد که با `interface` نمیشه.
 
 طبق مستندات TypeScript، شما باید به طور پیش‌فرض از `interface` استفاده کنید
 و زمانی سراغ `type` برید که واقعاً بهش نیاز دارید.
@@ -687,7 +648,7 @@ queue.enqueue({ firstName: "Bijan", lastName: "Eisapour" });
 :::info
 
 با ترکیب‌کردن Generic و Utility Types میشه تایپ‌های خیلی پیشرفته درست کرد.
-اما برای این بوت‌کمپ نیازی نیست خیلی توش عمیق شیم.
+اما برای این آموزش نیازی نیست خیلی توش عمیق شیم.
 
 :::
 
