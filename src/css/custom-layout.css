@@ -25,7 +25,7 @@ code {
   margin: auto;
 }
 
-h2 {
+.markdown h2 {
   padding-block-end: 0.5rem;
 
   border-block-end: 1px solid currentColor;
