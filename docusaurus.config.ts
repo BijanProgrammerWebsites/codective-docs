@@ -74,8 +74,13 @@ const config: Config = {
           position: "left",
         },
         {
-          href: "https://github.com/BijanProgrammerWebsites/codective-docs",
+          to: "/github",
           label: "GitHub",
+          position: "left",
+        },
+        {
+          href: "https://github.com/BijanProgrammerWebsites/codective-docs",
+          label: "کد سایت",
           position: "right",
         },
       ],
@@ -132,6 +137,14 @@ const config: Config = {
               label: "سایت اصلی",
               href: "https://codective.ir",
             },
+            {
+              label: "GitHub",
+              href: "https://github.com/CodectiveOrg",
+            },
+            {
+              label: "بیژن عیسی‌پور",
+              href: "https://bijanprogrammer.com",
+            },
           ],
         },
       ],
@@ -143,7 +156,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.vsDark,
-      additionalLanguages: ["diff"],
+      additionalLanguages: ["diff", "ini"],
       magicComments: [
         {
           className: "theme-code-block-highlighted-line",

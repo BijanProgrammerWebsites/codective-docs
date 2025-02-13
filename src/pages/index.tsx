@@ -30,6 +30,9 @@ function HomepageHeader() {
           <Link className="button button--secondary button--lg" to="/typescript">
             Typescript
           </Link>
+          <Link className="button button--secondary button--lg" to="/github">
+            GitHub
+          </Link>
         </div>
       </div>
     </header>
