@@ -33,6 +33,9 @@ function HomepageHeader() {
           <Link className="button button--secondary button--lg" to="/github">
             GitHub
           </Link>
+          <Link className="button button--secondary button--lg" to="/book">
+            کتاب
+          </Link>
         </div>
       </div>
     </header>
