@@ -36,6 +36,9 @@ function HomepageHeader() {
           <Link className="button button--secondary button--lg" to="/book">
             کتاب
           </Link>
+          <Link className="button button--secondary button--lg" to="/note">
+            یادداشت
+          </Link>
         </div>
       </div>
     </header>

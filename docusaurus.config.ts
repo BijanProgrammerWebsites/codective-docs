@@ -84,6 +84,11 @@ const config: Config = {
           position: "left",
         },
         {
+          to: "/note",
+          label: "یادداشت",
+          position: "left",
+        },
+        {
           href: "https://github.com/BijanProgrammerWebsites/codective-docs",
           label: "کد سایت",
           position: "right",
@@ -115,6 +120,10 @@ const config: Config = {
             {
               label: "کتاب",
               to: "/book",
+            },
+            {
+              label: "یادداشت",
+              to: "/note",
             },
           ],
         },
