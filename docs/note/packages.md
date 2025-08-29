@@ -16,6 +16,20 @@ description: ""
 
 آیکن مخصوص اماکنی که معمولاً در نقشه نمایش داده میشن؛ مثل پارک، موزه و مسجد.
 
+## Maintenance
+
+### [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)
+
+ورژن تمام پکیج‌های package.json رو به آخرین نسخه‌ی موجود تغییر میده.
+
+```shell
+npx npm-check-updates
+```
+
+```shell
+npm i
+```
+
 ## Utils
 
 ### [Immer](https://immerjs.github.io/immer/)
