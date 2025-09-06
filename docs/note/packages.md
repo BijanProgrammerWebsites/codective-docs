@@ -23,7 +23,7 @@ description: ""
 ورژن تمام پکیج‌های package.json رو به آخرین نسخه‌ی موجود تغییر میده.
 
 ```shell
-npx npm-check-updates
+npx npm-check-updates -u
 ```
 
 ```shell
