@@ -30,6 +30,14 @@ npx npm-check-updates -u
 npm i
 ```
 
+### [Knip](https://knip.dev/)
+
+کل پروژه رو بررسی میکنه و جاهایی که کد مرده وجود داره رو گزارش میده.
+
+```shell
+npx knip
+```
+
 ## Utils
 
 ### [Immer](https://immerjs.github.io/immer/)
