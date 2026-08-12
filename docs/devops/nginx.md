@@ -29,11 +29,11 @@ description: ""
    ln -s /etc/nginx/sites-available/DOMAIN /etc/nginx/sites-enabled/DOMAIN
    ```
 8. از طریق مرورگر به آدرس دامنه برید و چک کنید که صفحه پیش‌فرض NGINX رو نشون میده.  
-    همچنین می‌تونید به
+   همچنین می‌تونید به
    [nic.ir](https://nic.ir/)
    برید و بررسی کنید که Status از `Reserved` به `Registered` تغییر کرده یا نه.  
    ممکنه زمان‌بر باشه، صبر کنید.
-9. برای راه‌اندازی HTTPS، از [این آموزش](#دریافت-certificate-https-رایگان) استفاده کنید.
+9. برای راه‌اندازی HTTPS، از [این آموزش](#دریافت-https-certificate-رایگان) استفاده کنید.
 10. فایل `DOMAIN.ssl.conf` رو تو `/etc/nginx/common-configs/` بسازید.
 11. کانفیگ SSL رو تو این فایل بذارید:
     ```shell
