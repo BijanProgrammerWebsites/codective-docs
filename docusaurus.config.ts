@@ -120,28 +120,40 @@ const config: Config = {
           title: "مستندات",
           items: [
             {
-              label: "عمومی",
               to: "/general",
+              label: "عمومی",
             },
             {
-              label: "Clean Code",
               to: "/clean-code",
+              label: "Clean Code",
             },
             {
-              label: "Typescript",
               to: "/typescript",
+              label: "Typescript",
             },
             {
-              label: "GitHub",
+              to: "/test",
+              label: "Test",
+            },
+            {
               to: "/github",
+              label: "GitHub",
             },
             {
-              label: "کتاب",
+              to: "/devops",
+              label: "DevOps",
+            },
+            {
+              to: "/seo",
+              label: "SEO",
+            },
+            {
               to: "/book",
+              label: "کتاب",
             },
             {
-              label: "یادداشت‌ها",
               to: "/notes",
+              label: "یادداشت‌ها",
             },
           ],
         },
