@@ -64,34 +64,35 @@ const config: Config = {
       },
       items: [
         {
-          to: "/general",
-          label: "عمومی",
+          type: "dropdown",
+          label: "دسته‌بندی‌ها",
           position: "left",
-        },
-        {
-          to: "/clean-code",
-          label: "Clean Code",
-          position: "left",
-        },
-        {
-          to: "/typescript",
-          label: "Typescript",
-          position: "left",
-        },
-        {
-          to: "/github",
-          label: "GitHub",
-          position: "left",
-        },
-        {
-          to: "/book",
-          label: "کتاب",
-          position: "left",
-        },
-        {
-          to: "/notes",
-          label: "یادداشت‌ها",
-          position: "left",
+          items: [
+            {
+              to: "/general",
+              label: "عمومی",
+            },
+            {
+              to: "/clean-code",
+              label: "Clean Code",
+            },
+            {
+              to: "/typescript",
+              label: "Typescript",
+            },
+            {
+              to: "/github",
+              label: "GitHub",
+            },
+            {
+              to: "/book",
+              label: "کتاب",
+            },
+            {
+              to: "/notes",
+              label: "یادداشت‌ها",
+            },
+          ],
         },
         {
           href: "https://github.com/BijanProgrammerWebsites/codective-docs",
