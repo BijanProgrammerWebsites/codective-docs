@@ -1,8 +1,8 @@
 {
-  "label": "Note",
+  "label": "یادداشت‌ها",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "slug": "/note"
+    "slug": "/notes"
   }
 }

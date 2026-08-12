@@ -89,8 +89,8 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/note",
-          label: "یادداشت",
+          to: "/notes",
+          label: "یادداشت‌ها",
           position: "left",
         },
         {
@@ -127,8 +127,8 @@ const config: Config = {
               to: "/book",
             },
             {
-              label: "یادداشت",
-              to: "/note",
+              label: "یادداشت‌ها",
+              to: "/notes",
             },
           ],
         },
