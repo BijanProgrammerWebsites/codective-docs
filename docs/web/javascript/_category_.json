@@ -1,5 +1,6 @@
 {
-  "label": "Code Review",
+  "label": "JavaScript",
+  "position": 3,
   "link": {
     "type": "generated-index"
   }

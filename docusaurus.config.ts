@@ -77,8 +77,8 @@ const config: Config = {
               label: "Clean Code",
             },
             {
-              to: "/typescript",
-              label: "Typescript",
+              to: "/web",
+              label: "Web",
             },
             {
               to: "/test",
@@ -128,8 +128,8 @@ const config: Config = {
               label: "Clean Code",
             },
             {
-              to: "/typescript",
-              label: "Typescript",
+              to: "/web",
+              label: "Web",
             },
             {
               to: "/test",

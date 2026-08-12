@@ -1,8 +1,8 @@
 {
-  "label": "TypeScript",
+  "label": "Web",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "slug": "/typescript"
+    "slug": "/web"
   }
 }

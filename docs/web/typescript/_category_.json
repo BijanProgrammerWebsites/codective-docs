@@ -1,5 +1,6 @@
 {
-  "label": "Code Review",
+  "label": "TypeScript",
+  "position": 4,
   "link": {
     "type": "generated-index"
   }
