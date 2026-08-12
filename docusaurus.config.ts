@@ -165,6 +165,10 @@ const config: Config = {
               href: "https://t.me/Codective",
             },
             {
+              label: "بله",
+              href: "https://ble.ir/Codective",
+            },
+            {
               label: "LinkedIn",
               href: "https://www.linkedin.com/in/bijanprogrammer",
             },
