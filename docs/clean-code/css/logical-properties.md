@@ -86,3 +86,8 @@ description: ""
 بیشتر بدانیم:
 
 - [MDN - CSS Logical Properties and Values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties)
+
+## Viewport Units
+
+به جای `vh`، از `dvb` استفاده کنید (Dynamic Viewport Block).  
+به جای `vw`، از `dvi` استفاده کنید (Dynamic Viewport Inline).
