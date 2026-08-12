@@ -7,9 +7,14 @@
 
   .shape {
     background-color: var(--ifm-color-primary);
-    color: var(--ifm-button-color);
+    color: var(--ifm-color-primary-contrast-background);
 
     padding: 1rem;
+
+    code {
+      background-color: transparent;
+      border: none;
+    }
 
     &.fifty-percent {
       border-radius: 50%;
