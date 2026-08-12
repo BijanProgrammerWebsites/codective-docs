@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { generateRoutes } from "@site/routes";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -67,44 +68,7 @@ const config: Config = {
           type: "dropdown",
           label: "دسته‌بندی‌ها",
           position: "left",
-          items: [
-            {
-              to: "/general",
-              label: "عمومی",
-            },
-            {
-              to: "/clean-code",
-              label: "Clean Code",
-            },
-            {
-              to: "/web",
-              label: "Web",
-            },
-            {
-              to: "/test",
-              label: "Test",
-            },
-            {
-              to: "/github",
-              label: "GitHub",
-            },
-            {
-              to: "/devops",
-              label: "DevOps",
-            },
-            {
-              to: "/seo",
-              label: "SEO",
-            },
-            {
-              to: "/book",
-              label: "کتاب",
-            },
-            {
-              to: "/notes",
-              label: "یادداشت‌ها",
-            },
-          ],
+          items: generateRoutes(),
         },
         {
           href: "https://github.com/BijanProgrammerWebsites/codective-docs",
@@ -118,44 +82,7 @@ const config: Config = {
       links: [
         {
           title: "مستندات",
-          items: [
-            {
-              to: "/general",
-              label: "عمومی",
-            },
-            {
-              to: "/clean-code",
-              label: "Clean Code",
-            },
-            {
-              to: "/web",
-              label: "Web",
-            },
-            {
-              to: "/test",
-              label: "Test",
-            },
-            {
-              to: "/github",
-              label: "GitHub",
-            },
-            {
-              to: "/devops",
-              label: "DevOps",
-            },
-            {
-              to: "/seo",
-              label: "SEO",
-            },
-            {
-              to: "/book",
-              label: "کتاب",
-            },
-            {
-              to: "/notes",
-              label: "یادداشت‌ها",
-            },
-          ],
+          items: generateRoutes(),
         },
         {
           title: "شبکه‌های اجتماعی",

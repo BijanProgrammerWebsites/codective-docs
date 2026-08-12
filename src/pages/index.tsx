@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -8,10 +8,14 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
+import { generateRoutes } from "@site/routes";
+
 import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+
+  const routes = useMemo(() => generateRoutes(), []);
 
   return (
     <header className={clsx("hero", styles.heroBanner)}>
@@ -21,24 +25,11 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/general">
-            عمومی
-          </Link>
-          <Link className="button button--secondary button--lg" to="/clean-code">
-            Clean Code
-          </Link>
-          <Link className="button button--secondary button--lg" to="/typescript">
-            Typescript
-          </Link>
-          <Link className="button button--secondary button--lg" to="/github">
-            GitHub
-          </Link>
-          <Link className="button button--secondary button--lg" to="/book">
-            کتاب
-          </Link>
-          <Link className="button button--secondary button--lg" to="/notes">
-            یادداشت‌ها
-          </Link>
+          {routes.map((route) => (
+            <Link className="button button--secondary button--lg" to={route.to}>
+              {route.label}
+            </Link>
+          ))}
         </div>
       </div>
     </header>
