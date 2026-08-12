@@ -81,8 +81,20 @@ const config: Config = {
               label: "Typescript",
             },
             {
+              to: "/test",
+              label: "Test",
+            },
+            {
               to: "/github",
               label: "GitHub",
+            },
+            {
+              to: "/devops",
+              label: "DevOps",
+            },
+            {
+              to: "/seo",
+              label: "SEO",
             },
             {
               to: "/book",
